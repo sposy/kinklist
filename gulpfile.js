@@ -12,7 +12,22 @@ var gulp = require('gulp'),
 /**
  * Runs the default task.
  */
-gulp.task('default', ['build']);
+gulp.task('default', ['rebuild']);
+
+/**
+ * Watch for changes in TypeScript, HTML and CSS files.
+ */
+gulp.task('watch', function () {
+    gulp.watch(["src/**/*.ts"], ['compile-ts']).on('change', function (e) {
+        console.log('TypeScript file ' + e.path + ' has been changed. Compiling.');
+    });
+    gulp.watch(["src/**/*.html"], ['build-html']).on('change', function (e) {
+        console.log('Html file ' + e.path + ' has been changed. Updating.');
+    });
+    gulp.watch(["src/app/**/*.scss"], ['build-styles']).on('change', function (e) {
+        console.log('CSS file ' + e.path + ' has been changed. Updating.');
+    });
+});
 
 /**
  * Remove build directory.
@@ -24,7 +39,22 @@ gulp.task('clean', (cb) => {
 /**
  * Build the project.
  */
-gulp.task("build", ['compile-ts', 'build-html', 'build-images', 'build-fonts', 'build-scripts', 'build-styles', 'build-libs'], () => {
+gulp.task("build", ['compile-ts', 'build-resources'], () => {
+    console.log("Building the project ...");
+});
+
+/**
+ * Rebuild the project.
+ */
+gulp.task("rebuild", ['clean'], () => {
+    console.log("Rebuilding the project ...");
+    gulp.start('build');
+});
+
+/**
+ * Build the project resources.
+ */
+gulp.task("build-resources", ['build-html', 'build-images', 'build-fonts', 'build-scripts', 'build-styles', 'build-libs'], () => {
     console.log("Building the project ...");
 });
 
@@ -96,13 +126,13 @@ gulp.task("build-libs", () => {
 /**
  * Compile TypeScript sources and create sourcemaps in build directory.
  */
-gulp.task("compile-ts", ['tslint'], () => {
+gulp.task("compile-ts", () => {
     let tsResult = gulp.src("src/app/**/*.ts")
         // .pipe(sourcemaps.init())
         .pipe(tsProject());
     return tsResult.js
         // .pipe(sourcemaps.write(".", {sourceRoot: '/src'}))
-        .pipe(gulp.dest("build"));
+        .pipe(gulp.dest("build/app"));
 });
 
 /**
