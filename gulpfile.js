@@ -66,7 +66,7 @@ gulp.task('build-styles', function() {
     // .pipe(sourcemaps.init())
     .pipe(sass())
     // .pipe(sourcemaps.write())
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('build/styles'));
 });
 
 /**
@@ -118,7 +118,9 @@ gulp.task("build-libs", () => {
             'reflect-metadata/Reflect.js',
             'rxjs/**',
             'zone.js/dist/**',
-            '@angular/**'
+            '@angular/**',
+            'purecss/build/**',
+            'font-awesome/{css,fonts}/**'
         ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("build/lib"));
 });
@@ -127,12 +129,12 @@ gulp.task("build-libs", () => {
  * Compile TypeScript sources and create sourcemaps in build directory.
  */
 gulp.task("compile-ts", () => {
-    let tsResult = gulp.src("src/app/**/*.ts")
+    let tsResult = gulp.src("src/**/*.ts")
         // .pipe(sourcemaps.init())
         .pipe(tsProject());
     return tsResult.js
         // .pipe(sourcemaps.write(".", {sourceRoot: '/src'}))
-        .pipe(gulp.dest("build/app"));
+        .pipe(gulp.dest("build"));
 });
 
 /**
