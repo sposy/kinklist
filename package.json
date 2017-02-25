@@ -14,7 +14,7 @@
     "build": "gulp build",
     "compile": "gulp compile",
     "serve": "lite-server -c=bs-config.json",
-    "start": "concurrent --kill-others \"gulp watch\" \"npm run serve\"",
+    "start": "concurrently --kill-others \"gulp watch\" \"npm run serve\"",
     "lint": "tslint ./src/**/*.ts -t verbose"
   },
   "dependencies": {
