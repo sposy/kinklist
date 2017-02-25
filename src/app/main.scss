@@ -1,0 +1,290 @@
+$background-color: #fafafa;
+$primary-color: #fff;
+$secondary-color: #4b4b4b;
+$secondary-hover-color: lighten($secondary-color, 20%);
+$tertiary-color: #f15025;
+$text-color: $secondary-color;
+$text-secondary-color: $primary-color;
+$fav-color: #24a5f1;
+$love-color: #fb6ac1;
+$like-color: #2bcc2b;
+$meh-color: gold;
+$dislike-color: orange;
+$hate-color: red;
+$na-color: #4b4b4b;
+
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    color: $text-color;
+    line-height: 1.6;
+
+    
+}
+
+.pure-g > div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.hide {
+    display: none;
+}
+
+.page-header {
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: 1em;
+    text-align: center;
+
+    label {
+        color: $tertiary-color;
+        vertical-align: top;
+        font-size: 0.5em;
+    }
+}
+
+.toolbox {
+    background-color: $secondary-color;
+    text-align: right;
+
+    a {
+        background-color: $secondary-color;
+    }
+
+    .pure-menu-link {
+        color: $text-secondary-color;
+    }
+    
+    .pure-menu-link:active,
+    .pure-menu-link:focus {
+        color: $text-secondary-color;
+        background-color: $secondary-color;
+    }
+
+    .pure-menu-link:hover {
+        background-color: $secondary-hover-color;
+    }
+}
+
+.page-content {
+    background-color: $background-color;
+}
+
+.mode-display {
+    .rating-group-header {
+        color: $text-secondary-color;
+        cursor: pointer;
+        position: relative;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    .rating-group-header:after {
+        font-family: FontAwesome;
+        position: absolute;
+        font-size: 1.5em;
+        top: 0;
+        right: 15px;
+    }
+
+    .rating-group-header:not(.collapsed):after {
+        content: "\f0d7";
+    }
+
+    .rating-group-header.collapsed:after {
+        content: "\f0da";        
+    }
+    
+    .rating-group-header.collapsed:first-of-type + div {
+        display: none;
+    }
+
+    .item-label {
+        padding: 0;
+    }
+
+    .item-category {
+        text-align: right;
+    }
+
+    .rating-Favorite {
+        background-color: $fav-color;
+    }
+    .rating-Love {
+        background-color: $love-color;
+    }
+    .rating-Like {
+        background-color: $like-color;
+    }
+    .rating-Meh {
+        background-color: $meh-color;
+    }
+    .rating-Dislike {
+        background-color: $dislike-color;
+    }
+    .rating-Hate {
+        background-color: $hate-color;
+    }
+    .rating-No {
+        background-color: $na-color;
+    }
+}
+
+.mode-edit {
+    .pure-menu-link {
+        color: $text-color;
+        // font-weight: 600;
+    }
+    .pure-menu-link:hover {
+        color: $text-secondary-color;
+    }
+
+    .pure-menu-selected {
+        
+        .pure-menu-link,
+        a:focus, {
+            color: $text-secondary-color;
+            background: $secondary-color;
+        }
+
+        .rating-Favorite,
+        .rating-Favorite:active,
+        .rating-Favorite:focus, {
+            background-color: $fav-color;
+        }
+        .rating-Love,
+        .rating-Love:active,
+        .rating-Love:focus, {
+            background-color: $love-color;
+        }
+        .rating-Like,
+        .rating-Like:active,
+        .rating-Like:focus, {
+            background-color: $like-color;
+        }
+        .rating-Meh,
+        .rating-Meh:active,
+        .rating-Meh:focus, {
+            background-color: $meh-color;
+        }
+        .rating-Dislike,
+        .rating-Dislike:active,
+        .rating-Dislike:focus, {
+            background-color: $dislike-color;
+        }
+        .rating-Hate ,
+        .rating-Hate:active,
+        .rating-Hate:focus, {
+            background-color: $hate-color;
+        }
+        .rating-No,
+        .rating-No:active,
+        .rating-No:focus, {
+            background-color: $na-color;
+        }
+    }
+
+    .rating-Favorite:hover, {
+        background-color: lighten($fav-color, 20%);
+    }
+    .rating-Love:hover, {
+        background-color: lighten($love-color, 20%);
+    }
+    .rating-Like:hover, {
+        background-color: lighten($like-color, 20%);
+    }
+    .rating-Meh:hover, {
+        background-color: lighten($meh-color, 20%);
+    }
+    .rating-Dislike:hover, {
+        background-color: lighten($dislike-color, 20%);
+    }
+    .rating-Hate:hover, {
+        background-color: lighten($hate-color, 20%);
+    }
+    .rating-No:hover, {
+        background-color: lighten($na-color, 20%);
+    }
+}
+
+.rating-group {
+    text-align: center;
+    padding: 1em 2em;
+}
+
+.rating-group-header {
+}
+
+.rating-stats-header {
+    background: $tertiary-color;
+}
+
+.rating-item {    
+    text-align: left;
+}
+
+.item-label {
+    padding: .5em 1em;
+}
+
+.footer {
+    color: $text-secondary-color;
+    background-color: $tertiary-color;
+    font-weight: 600;
+    padding: 2em;
+}
+
+.modal-background {
+    background: rgba(0,0,0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.modal {
+    padding: 0 5% 5%;
+    background: $background-color;
+    align-self: center;
+
+    h2 {
+        text-align: center;
+    }
+
+    .modal-button {
+        background-color: $tertiary-color;
+        color: $text-secondary-color;
+        font-weight: bold;
+    }
+
+    .modal-button-close {
+        background-color: $secondary-color;
+        color: $text-secondary-color;
+        font-weight: bold;
+    }
+
+    .modal-feedback {
+        padding: 5px 0;
+        height: 25px;
+    }
+
+    // Share modal dialog.
+    .share-link {
+        border: 1px dashed $text-color;
+        padding: 20px;
+        width: 90%;
+        overflow: hidden;
+        resize: none;
+    }
+}
