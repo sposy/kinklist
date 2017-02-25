@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    selector: 'editor-panel',
+    selector: 'editPanel',
     templateUrl: 'edit.component.html',
 })
 export class EditComponent  {
