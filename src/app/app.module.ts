@@ -5,10 +5,17 @@ import { AppComponent }  from './app.component';
 import { ToolboxComponent }  from './components/toolbox.component';
 import { EditComponent }  from './components/edit.component';
 import { DisplayComponent }  from './components/display.component';
+import { ShareDialogComponent }  from './components/share-dialog.component';
 
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent, ToolboxComponent, EditComponent, DisplayComponent ],
+  declarations: [ 
+                  AppComponent, 
+                  ToolboxComponent, 
+                  EditComponent, 
+                  DisplayComponent,
+                  ShareDialogComponent
+                ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
