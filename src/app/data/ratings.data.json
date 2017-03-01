@@ -1,0 +1,62 @@
+[
+    {
+        "Label": "Orange juice",
+        "Rating": null,
+        "Category": "Beverage"
+    },
+    {
+        "Label": "Borstj",
+        "Rating": 1,
+        "Category": "Food"
+    },
+    {
+        "Label": "Apple juice",
+        "Rating": 2,
+        "Category": "Beverage"
+    },
+    {
+        "Label": "Hamburger",
+        "Rating": 5,
+        "Category": "Food"
+    },
+    {
+        "Label": "Soup",
+        "Rating": 0,
+        "Category": "Food"
+    },
+    {
+        "Label": "Candy bar",
+        "Rating": 2,
+        "Category": "Treat"
+    },
+    {
+        "Label": "Soda",
+        "Rating": 5,
+        "Category": "Beverage"
+    },
+    {
+        "Label": "Lollypop",
+        "Rating": 1,
+        "Category": "Treat"
+    },
+    {
+        "Label": "Cookie",
+        "Rating": 4,
+        "Category": "Treat"
+    },
+    {
+        "Label": "Sandwich",
+        "Rating": 3,
+        "Category": "Food"
+    },
+    {
+        "Label": "Beer",
+        "Rating": 0,
+        "Category": "Beverage"
+    },
+    {
+        "Label": "Popcorn",
+        "Rating": 3,
+        "Category": "Treat"
+    }
+]
