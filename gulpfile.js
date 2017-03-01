@@ -54,7 +54,7 @@ gulp.task("rebuild", ['clean'], () => {
 /**
  * Build the project resources.
  */
-gulp.task("build-resources", ['build-html', 'build-images', 'build-fonts', 'build-scripts', 'build-styles', 'build-libs'], () => {
+gulp.task("build-resources", ['build-html', 'build-images', 'build-fonts', 'build-scripts', 'build-styles', 'build-libs', 'build-data'], () => {
     console.log("Building the project ...");
 });
 
@@ -106,7 +106,6 @@ gulp.task('build-html', function() {
     .pipe(gulp.dest('build'));
 });
 
-
 /**
  * Copy all required libraries into build directory.
  */
@@ -123,6 +122,14 @@ gulp.task("build-libs", () => {
             'font-awesome/{css,fonts}/**'
         ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("build/lib"));
+});
+
+/**
+ * Copy data files.
+ */
+gulp.task('build-data', function() {
+  return gulp.src('src/app/data**/*.json')
+    .pipe(gulp.dest('build/app'));
 });
 
 /**
