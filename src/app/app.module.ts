@@ -5,6 +5,8 @@ import { AppComponent }  from './app.component';
 import { ToolboxComponent }  from './components/toolbox.component';
 import { EditComponent }  from './components/edit.component';
 import { DisplayComponent }  from './components/display.component';
+import { DisplayGroupComponent }  from './components/display-group.component';
+import { DisplayItemComponent }  from './components/display-item.component';
 import { ShareDialogComponent }  from './components/share-dialog.component';
 
 @NgModule({
@@ -14,6 +16,8 @@ import { ShareDialogComponent }  from './components/share-dialog.component';
                   ToolboxComponent, 
                   EditComponent, 
                   DisplayComponent,
+                  DisplayGroupComponent,
+                  DisplayItemComponent,
                   ShareDialogComponent
                 ],
   bootstrap:    [ AppComponent ]
