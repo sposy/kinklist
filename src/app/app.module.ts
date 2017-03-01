@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { ToolboxComponent }  from './components/toolbox.component';
@@ -10,7 +11,9 @@ import { DisplayItemComponent }  from './components/display-item.component';
 import { ShareDialogComponent }  from './components/share-dialog.component';
 
 @NgModule({
-  imports:      [ BrowserModule ],
+  imports:      [ 
+                  BrowserModule, 
+                  HttpModule ],
   declarations: [ 
                   AppComponent, 
                   ToolboxComponent, 
